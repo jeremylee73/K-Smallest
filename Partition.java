@@ -21,7 +21,17 @@ public class Partition{
         start += 1;
       }
     }
-    return 0;
+
+    if (data[start] <= pivot) {
+      swap(data, start, pivot);
+      pivotIndex = start;
+      pivot = data[pivotIndex];
+    } else {
+      swap(data, start-1, pivot);
+      pivotIndex = start-1;
+      pivot = data[pivotIndex];
+    }
+    return pivot;
   }
 
   private static void swap(int[] data, int a, int b){
