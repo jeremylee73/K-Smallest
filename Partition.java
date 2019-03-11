@@ -12,6 +12,14 @@ public class Partition{
   public static int partition(int[] data, int start, int end){
     int pivotIndex = (int)(Math.random() * data.length);
     int pivot = data[pivotIndex];
+    swap(data, start, pivotIndex);
+    
     return 0;
+  }
+
+  private static void swap(int[] data, int a, int b){
+    int temp = data[a];
+    data[a] = data[b];
+    data[b] = temp;
   }
 }
