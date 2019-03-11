@@ -23,20 +23,25 @@ public class Partition{
     }
 
     if (data[start] <= pivot) {
-      swap(data, start, pivot);
+      swap(data, start, pivotIndex);
       pivotIndex = start;
       pivot = data[pivotIndex];
     } else {
-      swap(data, start-1, pivot);
+      swap(data, start-1, pivotIndex);
       pivotIndex = start-1;
       pivot = data[pivotIndex];
     }
-    return pivot;
+    return pivotIndex;
   }
 
   private static void swap(int[] data, int a, int b){
     int temp = data[a];
     data[a] = data[b];
     data[b] = temp;
+  }
+
+  public static void main(String[] args){
+    int[] test = new int[] {17,61,67,47,93,12,20,4,44,68};
+    System.out.println(Partition.partition(test,0,test.length-1));
   }
 }
