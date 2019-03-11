@@ -13,7 +13,14 @@ public class Partition{
     int pivotIndex = (int)(Math.random() * data.length);
     int pivot = data[pivotIndex];
     swap(data, start, pivotIndex);
-    
+    while (start != end) {
+      if (data[start] > pivot) {
+        swap(data, start, end);
+        end -= 1;
+      } else {
+        start += 1;
+      }
+    }
     return 0;
   }
 
