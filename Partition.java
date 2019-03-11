@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Partition{
     /*Modify the array such that:
    *1. Only the indices from start to end inclusive are considered in range
@@ -8,6 +10,8 @@ public class Partition{
    *@return the index of the final position of the pivot element.
    */
   public static int partition(int[] data, int start, int end){
+    int pivotIndex = (int)(Math.random() * data.length);
+    int pivot = data[pivotIndex];
     return 0;
   }
 }
